@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <!--
+  <persistence-unit name="CasaERP_PU" transaction-type="RESOURCE_LOCAL">
+  -->
+  <persistence-unit name="CasaERP_PU" transaction-type="JTA">
+    
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/defERPDatasource</jta-data-source>
+
+    <class>com.defterp.modules.accounting.entities.Account</class>
+    <class>com.defterp.modules.accounting.entities.Invoice</class>
+    <class>com.defterp.modules.accounting.entities.InvoiceLine</class>
+    <class>com.defterp.modules.accounting.entities.InvoicePayment</class>
+    <class>com.defterp.modules.accounting.entities.InvoiceTax</class>
+    <class>com.defterp.modules.accounting.entities.Journal</class>
+    <class>com.defterp.modules.accounting.entities.JournalEntry</class>
+    <class>com.defterp.modules.accounting.entities.JournalItem</class>
+    <class>com.defterp.modules.accounting.entities.Payment</class>
+    <class>com.defterp.modules.accounting.entities.Tax</class>
+    <class>com.defterp.modules.inventory.entities.DeliveryOrder</class>
+    <class>com.defterp.modules.inventory.entities.DeliveryOrderLine</class>
+    <class>com.defterp.modules.inventory.entities.Inventory</class>
+    <class>com.defterp.modules.inventory.entities.Product</class>
+    <class>com.defterp.modules.inventory.entities.ProductCategory</class>
+    <class>com.defterp.modules.inventory.entities.ProductUom</class>
+    <class>com.defterp.modules.inventory.entities.ProductUomCategory</class>
+    <class>com.defterp.modules.partners.entities.Partner</class>
+    <class>com.defterp.modules.purchases.entities.PurchaseOrder</class>
+    <class>com.defterp.modules.purchases.entities.PurchaseOrderLine</class>
+    <class>com.defterp.modules.sales.entities.SaleOrder</class>
+    <class>com.defterp.modules.sales.entities.SaleOrderLine</class>
+    <class>com.defterp.modules.users.entities.User</class>
+    
+    <properties>
+    	<property name="eclipselink.jdbc.password" value=""/>
+        <property name="eclipselink.jdbc.user" value="root"/>
+        <property name="eclipselink.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+        <property name="eclipselink.jdbc.url" value="jdbc:mysql://localhost:3306/erp"/>
+        <!-- 
+        <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+         -->
+        <property name="eclipselink.logging.level" value="INFO"/>
+
+    </properties>
+  </persistence-unit>
+</persistence>
+
+<!-- 
+  <persistence-unit name="CasaERP_PU" transaction-type="JTA">
+   -->
+   
+<!-- 
+    <jta-data-source>java:jboss/datasources/MySQLDS</jta-data-source>
+     -->
+     
+<!-- 
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+     -->       
